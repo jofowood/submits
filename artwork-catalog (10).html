@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Catalog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #fff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .title-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .title-header img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .artwork-card {
+            background: #f9f9f9;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s;
+        }
+        
+        .artwork-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            max-height: 300px;
+            min-height: 200px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .artwork-image img {
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .artwork-info {
+            padding: 20px;
+        }
+        
+        .artwork-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        
+        .artwork-meta {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .artwork-meta div {
+            margin-bottom: 4px;
+        }
+        
+        .inv-number {
+            font-family: monospace;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #222;
+        }
+        
+        .inquire-btn {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: #888;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .inquire-btn:hover {
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-header">
+            <img src="data:image/webp;base64,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" alt="JOHN WOODRUFF">
+            <img src="data:image/webp;base64,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" alt="CATALOG">
+        </div>
+        <div id="status" class="loading">Loading catalog...</div>
+        <div id="catalog" class="grid"></div>
+    </div>
+
+    <script>
+        const API_TOKEN = '15d2c34c1ab2c226a629c1dcb9c9e02cffec1376';
+        const SERVER_URL = 'https://cloud.seatable.io';
+        
+        let baseToken = null;
+        let baseUUID = null;
+        
+        // Lookup tables for select fields
+        const STATUS_MAP = {
+            '420198': 'In Process',
+            '900687': 'In Production',
+            '311037': 'Available',
+            '788492': 'Sketch',
+            '664740': 'Sold'
+        };
+        
+        const LOCATION_MAP = {
+            '635959': 'Studio',
+            '766953': 'Storage',
+            '138844': 'Showing',
+            '696930': 'Private Collection',
+            '553126': 'In Process'
+        };
+        
+        const EDITIONS_MAP = {
+            '465421': 'Unique Piece',
+            '47020': 'Edition',
+            '881410': 'AP'
+        };
+        
+        const FRAME_MAP = {
+            '758117': 'Unframed',
+            '770139': 'White Studio Frame',
+            '739238': 'Black Studio Frame',
+            '243827': 'Dark Studio Frame',
+            '766220': 'Light Studio Frame',
+            '386865': 'Custom Frame',
+            '145290': 'N/A'
+        };
+        
+        async function getBaseToken() {
+            const response = await fetch(`${SERVER_URL}/api/v2.1/dtable/app-access-token/`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${API_TOKEN}`
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to get base token: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            baseToken = data.access_token;
+            baseUUID = data.dtable_uuid;
+            
+            return data;
+        }
+        
+        async function getTableRows(tableName, viewName = null) {
+            let url = `${SERVER_URL}/api-gateway/api/v2/dtables/${baseUUID}/rows/?table_name=${encodeURIComponent(tableName)}`;
+            if (viewName) {
+                url += `&view_name=${encodeURIComponent(viewName)}`;
+            }
+            
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${baseToken}`
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to get rows: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            return data.rows;
+        }
+        
+        function displayArtworks(rows) {
+            const catalog = document.getElementById('catalog');
+            const status = document.getElementById('status');
+            
+            if (!rows || rows.length === 0) {
+                status.innerHTML = '<div class="error">No artworks found in the Works & Exhibits table.</div>';
+                return;
+            }
+            
+            status.style.display = 'none';
+            
+            rows.forEach(row => {
+                const card = document.createElement('div');
+                card.className = 'artwork-card';
+                
+                // Extract data using actual column IDs
+                const inventoryNum = row['0000'] || '';
+                const title = row.gScu || 'Untitled';
+                const collection = row.z350 || '';
+                const date = row['4UG7'] || '';
+                const medium = row.Xe9e || '';
+                const editionDesc = row['3y0u'] || '';
+                const currentSeq = row.rXGj || '';
+                const imageSize = row.gWXH || '';
+                const paperSize = row['2Te2'] || '';
+                const frameSize = row['6Ci3'] || '';
+                const price = row.upE4 ? `$${row.upE4}` : '';
+                
+                // Decode select fields
+                const status = STATUS_MAP[row.I6sx] || '';
+                const location = LOCATION_MAP[row.N1Mq] || '';
+                const editionType = EDITIONS_MAP[row.pLo6] || '';
+                const frameType = FRAME_MAP[row.OC3R] || '';
+                
+                // Get images
+                const thumbnail = row.Jcpv && row.Jcpv.length > 0 ? row.Jcpv[0] : null;
+                
+                let imageHTML = '';
+                if (thumbnail) {
+                    imageHTML = `<div class="artwork-image"><img src="${thumbnail}" alt="${title}"></div>`;
+                } else {
+                    imageHTML = `<div class="artwork-image"></div>`;
+                }
+                
+                // Build metadata display
+                let metaHTML = '';
+                if (inventoryNum) metaHTML += `<div class="inv-number">${inventoryNum}</div>`;
+                if (collection) metaHTML += `<div><strong>Series:</strong> ${collection}</div>`;
+                if (date) metaHTML += `<div><strong>Year:</strong> ${date}</div>`;
+                if (currentSeq) metaHTML += `<div><strong>Edition:</strong> ${currentSeq}</div>`;
+                if (imageSize) metaHTML += `<div><strong>Image:</strong> ${imageSize}"</div>`;
+                if (paperSize) metaHTML += `<div><strong>Paper:</strong> ${paperSize}"</div>`;
+                if (frameType && frameType !== 'N/A') metaHTML += `<div><strong>Frame:</strong> ${frameType}</div>`;
+                if (editionDesc) metaHTML += `<div style="margin-top: 10px; font-size: 0.85rem; line-height: 1.5;">${editionDesc}</div>`;
+                if (status) metaHTML += `<div><strong>Status:</strong> ${status}</div>`;
+                if (price && status !== 'Sold') metaHTML += `<div class="price">${price}</div>`;
+                
+                // Build email body
+                let emailBody = `I'm interested in the following artwork:\n\n`;
+                emailBody += `Title: ${title}\n`;
+                if (inventoryNum) emailBody += `Inventory: ${inventoryNum}\n`;
+                if (collection) emailBody += `Series: ${collection}\n`;
+                if (date) emailBody += `Year: ${date}\n`;
+                if (currentSeq) emailBody += `Edition: ${currentSeq}\n`;
+                if (imageSize) emailBody += `Image Size: ${imageSize}"\n`;
+                if (paperSize) emailBody += `Paper Size: ${paperSize}"\n`;
+                if (frameSize) emailBody += `Frame Size: ${frameSize}"\n`;
+                if (frameType && frameType !== 'N/A') emailBody += `Frame: ${frameType}\n`;
+                if (editionDesc) emailBody += `\nDetails: ${editionDesc}\n`;
+                if (medium) emailBody += `Medium: ${medium}\n`;
+                if (status) emailBody += `Status: ${status}\n`;
+                if (location) emailBody += `Location: ${location}\n`;
+                if (price && status !== 'Sold') emailBody += `Price: ${price}\n`;
+                
+                const emailSubject = `Inquiry: ${title}${inventoryNum ? ' (' + inventoryNum + ')' : ''}`;
+                const mailtoLink = `mailto:jofowood@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                
+                card.innerHTML = `
+                    ${imageHTML}
+                    <div class="artwork-info">
+                        <div class="artwork-title">${title}</div>
+                        <div class="artwork-meta">
+                            ${metaHTML}
+                        </div>
+                        <a href="${mailtoLink}" class="inquire-btn">Inquire</a>
+                    </div>
+                `;
+                
+                catalog.appendChild(card);
+            });
+            
+            // Update status to show count
+            status.innerHTML = `<div style="color: #666; margin-bottom: 20px;">Showing ${rows.length} artworks</div>`;
+            status.style.display = 'block';
+        }
+        
+        function showError(message) {
+            const status = document.getElementById('status');
+            status.innerHTML = `<div class="error">Error: ${message}<br><br>Please check the console for details.</div>`;
+        }
+        
+        async function loadCatalog() {
+            try {
+                await getBaseToken();
+                const rows = await getTableRows('Works & Exhibits', 'Produced Works');
+                displayArtworks(rows);
+            } catch (error) {
+                console.error('Error loading catalog:', error);
+                showError(error.message);
+            }
+        }
+        
+        // Load catalog when page loads
+        loadCatalog();
+    </script>
+</body>
+</html>
