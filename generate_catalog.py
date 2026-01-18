@@ -91,15 +91,30 @@ def download_image(image_url, api_token, output_path):
         print(f"  ✓ Already exists: {output_path.name}")
         return True
     
-    # Extract path from URL for download link API
+    # Extract path from URL - need everything after /asset/{uuid}/
+    # URL format: https://cloud.seatable.io/workspace/XX/asset/{uuid}/images/2024-02/file.jpg
     parsed = urlparse(image_url)
     path = unquote(parsed.path)
+    
+    # Split on /asset/ and get everything after the UUID
+    if '/asset/' in path:
+        after_asset = path.split('/asset/')[1]
+        # Remove the UUID part (first segment after /asset/)
+        path_parts = after_asset.split('/', 1)
+        if len(path_parts) > 1:
+            relative_path = path_parts[1]  # e.g., "images/2024-02/file.jpg"
+        else:
+            print(f"  ✗ Could not parse path: {path}")
+            return False
+    else:
+        print(f"  ✗ Invalid URL format: {image_url}")
+        return False
     
     # Get download link
     response = requests.get(
         f"{SERVER_URL}/api/v2.1/dtable/app-download-link/",
         headers={"Authorization": f"Token {api_token}"},
-        params={"path": path.split("/asset/")[1]}  # Path after /asset/uuid/
+        params={"path": relative_path}
     )
     response.raise_for_status()
     download_url = response.json()["download_link"]
