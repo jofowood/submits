@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Catalog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #fff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .artwork-card {
+            background: #f9f9f9;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s;
+        }
+        
+        .artwork-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            height: 300px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .artwork-image img {
+            max-width: 100%;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .artwork-info {
+            padding: 20px;
+        }
+        
+        .artwork-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        
+        .artwork-meta {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .artwork-meta div {
+            margin-bottom: 4px;
+        }
+        
+        .inv-number {
+            font-family: monospace;
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Artwork Catalog</h1>
+        <div class="grid">
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/cc48bd3d715e.jpg" alt="Briny Margin, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA01</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/cc48bd3d715e.jpg" alt="Briny Margin, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA01S</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/2a3334389191.jpg" alt="Briny Margin, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA02</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7e14832a4c4e.jpg" alt="Briny Margin, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA03</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ff2dc59abd07.jpg" alt="Briny Margin, No. 04">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 04</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA04</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/bb57f6136989.jpg" alt="Briny Margin, No. 05">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 05</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA05</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ee64101848ea.jpg" alt="Briny Margin, No. 06">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 06</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA06</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/44c3f8c3dfd9.jpg" alt="Briny Margin, No. 07">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 07</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA07(copy)</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/44c3f8c3dfd9.jpg" alt="Briny Margin, No. 07">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 07</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA07(copy)</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/d1dd1734c198.jpg" alt="Briny Margin, No. 08">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Briny Margin, No. 08</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRMA08</div>
+                        <div><strong>Series:</strong> Briny Margin</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/58ed9a935360.jpg" alt="Natural Studies, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Natural Studies, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">NATX0101</div>
+                        <div><strong>Series:</strong> Natural Studies</div>
+                        <div><strong>Year:</strong> 2022</div>
+                        <div><strong>Edition:</strong> #1/10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/284a6f242ec6.jpg" alt="Natural Studies, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Natural Studies, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">NATX0201</div>
+                        <div><strong>Series:</strong> Natural Studies</div>
+                        <div><strong>Year:</strong> 2022</div>
+                        <div><strong>Edition:</strong> #1/10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/fa688251048c.jpg" alt="Natural Studies, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Natural Studies, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">NATX0301</div>
+                        <div><strong>Series:</strong> Natural Studies</div>
+                        <div><strong>Year:</strong> 2022</div>
+                        <div><strong>Edition:</strong> #1/10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ec107768f296.jpg" alt="Patulous Dusk, No.01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC0101</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ad43102071c9.jpg" alt="Patulous Dusk, No.02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC0201</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7a8a5516d596.jpg" alt="Patulous Dusk, No.02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC0202</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/63d7c4d568e1.jpg" alt="Patulous Dusk, No.06">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.06</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC06</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #2/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/63d7c4d568e1.jpg" alt="Patulous Dusk, No.06">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.06</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC06</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/a9521488b2df.jpg" alt="Patulous Dusk, No.08">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Dusk, No.08</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATC0801</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7783cfde305f.jpg" alt="Patuous Greenspace, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patuous Greenspace, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATG01</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7207f0076dd4.jpg" alt="Patulous Greenspace, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Greenspace, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATG02</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7207f0076dd4.jpg" alt="Patulous Greenspace, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Greenspace, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATG02</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7e87462ccb8d.jpg" alt="Patulous Greenspace, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Greenspace, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATG0301</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2023</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7e87462ccb8d.jpg" alt="Patulous Greenspace, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Patulous Greenspace, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PATG03</div>
+                        <div><strong>Series:</strong> Patulous</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ad11706e035d.jpg" alt="24 Blue Plafond, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">24 Blue Plafond, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAB2401</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ab43641dff74.jpg" alt="24 Blue Plafond, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">24 Blue Plafond, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAB2402</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/c282ccca12a7.jpg" alt="24 Blue Plafond, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">24 Blue Plafond, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAB2403</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/de276c88d212.jpg" alt="24 Blue Plafond, No. 04-D">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">24 Blue Plafond, No. 04-D</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAB2404-D</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/d81524010667.jpg" alt="3 x 3 Green Plafond, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">3 x 3 Green Plafond, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0101</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/20eef84aeee2.jpg" alt="3 x 3 Green Plafond, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">3 x 3 Green Plafond, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0201</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/a1b99238a5eb.tif" alt="3 x 3 Green Plafond, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">3 x 3 Green Plafond, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0301</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/0b895a71c796.jpg" alt="Rhythmic Green Plafond, No. 04">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythmic Green Plafond, No. 04</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0004</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/349f83b54a6c.jpg" alt="Rhythmic Green Plafond, No. 05">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythmic Green Plafond, No. 05</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0005</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/af402fb0223f.jpg" alt="Rhythmic Green Plafond, No. 06">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythmic Green Plafond, No. 06</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0006</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/0daca88b1784.jpg" alt="Rhythmic Green Plafond, No. 07">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythmic Green Plafond, No. 07</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAG0007</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/1043f4fa274d.jpg" alt="Plafond Sequence, No. 01 (Orange)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Plafond Sequence, No. 01 (Orange)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAO0001</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/c2e90320fa77.jpg" alt="Plafond Sequence, No. 02 (Orange)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Plafond Sequence, No. 02 (Orange)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PLAO0002</div>
+                        <div><strong>Series:</strong> Plafond</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/48336064661d.jpg" alt="Untitled Purl, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Purl, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PURX0301</div>
+                        <div><strong>Series:</strong> Purl</div>
+                        <div><strong>Year:</strong> 2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/6d8f796eb644.jpg" alt="Untitled Purl, No. 06">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Purl, No. 06</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PURX0601</div>
+                        <div><strong>Series:</strong> Purl</div>
+                        <div><strong>Year:</strong> 2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/d3c38c8f7cd1.jpg" alt="Untitled Purl, No. 15">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Purl, No. 15</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PURX1501</div>
+                        <div><strong>Series:</strong> Purl</div>
+                        <div><strong>Year:</strong> 2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ec8936630ff4.jpg" alt="Untitled Purl, No. 24">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Purl, No. 24</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PURX2401</div>
+                        <div><strong>Series:</strong> Purl</div>
+                        <div><strong>Year:</strong> 2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/71245819e385.jpg" alt="Untitled Purl, No. 25">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Purl, No. 25</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PURX2501</div>
+                        <div><strong>Series:</strong> Purl</div>
+                        <div><strong>Year:</strong> 2021</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/3c844e0d6091.jpg" alt="Rainbow Set of 13, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rainbow Set of 13, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RAIN1302</div>
+                        <div><strong>Series:</strong> Rainbow Sets</div>
+                        <div><strong>Year:</strong> 2026</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/1fdfd2640533.png" alt="Form Type, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Form Type, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">FOTY01</div>
+                        <div><strong>Series:</strong> Form Type</div>
+                        <div><strong>Year:</strong> 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/cde5638a9978.png" alt="Form Type, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Form Type, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">FOTY02</div>
+                        <div><strong>Series:</strong> Form Type</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/2f2b0afb5b2c.jpg" alt="Form Type, No.07">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Form Type, No.07</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">FOTC07</div>
+                        <div><strong>Series:</strong> Form Type</div>
+                        <div><strong>Year:</strong> 2026</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/182e914f7473.png" alt="Form Type, No. 06 AP">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Form Type, No. 06 AP</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">FOTR06 AP</div>
+                        <div><strong>Series:</strong> Form Type</div>
+                        <div><strong>Year:</strong> 2026</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/0046a733166c.JPG" alt="Put Apart, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Put Apart, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PUTX0001</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/8a450230ceea.JPG" alt="Put Apart, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Put Apart, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">PUTX0002</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/f5568d3fba2b.jpg" alt="Rhythm, Blue, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythm, Blue, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RHYB0001</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/ffdccb1a1bc0.jpg" alt="Rhythm, Blue, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythm, Blue, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RHYB0002</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/9d97a607642b.jpg" alt="Red, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Red, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RESQ0001</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/2ecc69430b5b.jpg" alt="Red, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Red, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RESQ0002</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/4f6096e93018.jpg" alt="Red, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Red, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RESQ0003</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/5b3e1831efbe.JPG" alt="Model Form, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Model Form, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILF0001</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> 1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/4ed8d54133a5.JPG" alt="Model Form, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Model Form, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILF0002</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> 1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/5204139fb9db.JPG" alt="Model Form, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Model Form, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILF0003</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> 1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/fbef1543e1a6.PNG" alt="Rainbow Silk, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rainbow Silk, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILK0003</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/49477f92c93f.PNG" alt="7 Orange Spines of Somewhere">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">7 Orange Spines of Somewhere</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILK0001</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/9f8b5a558ab2.jpg" alt="Rainbow Silk, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rainbow Silk, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILK0002</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/dd6f7a2984a5.PNG" alt="Blue Purl">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Blue Purl</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILK0004</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/141e5eb727ce.JPG" alt="Untitled Grid on Silk, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Grid on Silk, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILP0005</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2023</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/a3d72574e500.jpg" alt="Untitled Margin on Silk, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Margin on Silk, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILM0001</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/60f3975b4b2d.jpg" alt="Untitled Margin on Silk, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Margin on Silk, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILM0002</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/418ebdba68ea.jpg" alt="Untitled Margin on Silk, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Margin on Silk, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILM0003</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7c36cde7213e.jpg" alt="Untitled Margin on Silk, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Margin on Silk, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILM0004</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/5db985765ffe.jpg" alt="Untitled Margin on Silk, No. 05">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Untitled Margin on Silk, No. 05</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">SILM0005</div>
+                        <div><strong>Series:</strong> Works on Silk</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/8200a26f35fc.jpg" alt="Break & Habit, No. 02, Detail 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Break & Habit, No. 02, Detail 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRHA02D03</div>
+                        <div><strong>Series:</strong> Break & Habit</div>
+                        <div><strong>Year:</strong> 2026</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/8903948a21ee.jpg" alt="Break & Habit, No. 02, Detail 05">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Break & Habit, No. 02, Detail 05</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRHA02D05</div>
+                        <div><strong>Series:</strong> Break & Habit</div>
+                        <div><strong>Year:</strong> 2026</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/65f9897f2f8a.jpg" alt="Break & Habit, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Break & Habit, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRHA03V2</div>
+                        <div><strong>Series:</strong> Break & Habit</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/3299eae52d6e.jpg" alt="Break & Habit, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Break & Habit, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRHA03V2AP</div>
+                        <div><strong>Series:</strong> Break & Habit</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/746020617dc2.jpg" alt="Break & Habit, No. 03-12">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Break & Habit, No. 03-12</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">BRHA03D301</div>
+                        <div><strong>Series:</strong> Break & Habit</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/cdcbac92fb4c.jpg" alt="Feathers, No. 01 Version 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Feathers, No. 01 Version 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">NATS01V1</div>
+                        <div><strong>Series:</strong> Natural Studies</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7b3f6d651e42.jpg" alt="Habit Pattern, No. 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA01</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/941251d6f5d5.jpg" alt="Habit Pattern, No. 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA02</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/7229b4834bca.jpg" alt="Habit Pattern, No. 03">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 03</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA03</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/b4adb4382a85.jpg" alt="Habit Pattern, No. 04">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 04</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA04</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/2ffcc21fdaf3.jpg" alt="Habit Pattern, No. 04, Version 3">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 04, Version 3</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA04V3</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/9a998daa612e.jpg" alt="Habit Pattern, No. 05">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 05</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA05</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/f7c21a33b459.jpg" alt="Habit Pattern, No. 08">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 08</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA08</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/97d4a54e6d12.jpg" alt="Habit Pattern, No. 08-AP">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 08-AP</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA08-AP</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> AP 1/1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/c68ad74228e3.jpg" alt="Habit Pattern, No. 11">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 11</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA11</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> Unique Piece</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/70fdf8edd1e0.jpg" alt="Habit Pattern, No. 09 (yellow)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 09 (yellow)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA0009</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/70fdf8edd1e0.jpg" alt="Habit Pattern, No. 09 (yellow)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 09 (yellow)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA0009-AP</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/6a6fd843752c.jpg" alt="Habit Pattern, No. 10 (red)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 10 (red)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA10</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/6b6c6b182ccb.jpg" alt="Tiny Bone, No. 04">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Tiny Bone, No. 04</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">TINX04-P</div>
+                        <div><strong>Series:</strong> Tiny Bone</div>
+                        <div><strong>Year:</strong> 2016</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/f608816a37b3.jpg" alt="Tiny Bone, No. 12">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Tiny Bone, No. 12</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">TINX12-P</div>
+                        <div><strong>Series:</strong> Tiny Bone</div>
+                        <div><strong>Year:</strong> 2016</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/4b4536a0f345.jpg" alt="Tiny Bone, No. 17">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Tiny Bone, No. 17</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">TINX17-P</div>
+                        <div><strong>Series:</strong> Tiny Bone</div>
+                        <div><strong>Year:</strong> 2016</div>
+                        <div><strong>Edition:</strong> 2/10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/97a95e6400d8.jpg" alt="Metallic, No. 04">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Metallic, No. 04</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">METS04</div>
+                        <div><strong>Series:</strong> Natural Studies</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/63eba8aed414.jpg" alt="Tiny Bone">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Tiny Bone</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">TIGR01- for shift</div>
+                        <div><strong>Series:</strong> Tiny Bone</div>
+                        <div><strong>Year:</strong> 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/00594e8a7887.jpg" alt="Tiny Bone Portfolio">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Tiny Bone Portfolio</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">TINP</div>
+                        <div><strong>Series:</strong> Tiny Bone</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> 1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/6a6fd843752c.jpg" alt="Habit Pattern, No. 10 (red)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 10 (red)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA10-AP</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> AP 1/1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/946d1db2b275.jpg" alt="Habit Pattern, No. 18 (cyan)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 18 (cyan)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA18</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/d9707585b192.jpg" alt="Habit Pattern, No. 13 (green)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 13 (green)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA13</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/55c74e0abcb0.jpg" alt="Habit Pattern, No. 14 (green)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 14 (green)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA14</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/08e3f4f491f5.jpg" alt="Habit Pattern, No. 15 (green)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 15 (green)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA15</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/397e53648b94.jpg" alt="Habit Pattern, No. 16 (orange)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 16 (orange)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA16</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/a01af5fc1145.jpg" alt="Habit Pattern, No. 17 (orange)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 17 (orange)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA17</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/674ba0d062a8.png" alt="Habits 2024-2025">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habits 2024-2025</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA-NEWS01</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #10/30</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/609ebffd8580.jpg" alt="Habit Pattern, No. 19 V2">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Habit Pattern, No. 19 V2</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">HAPA19 V2</div>
+                        <div><strong>Series:</strong> Habit Pattern</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> #1/5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/b7dbb89f215a.jpg" alt="Rhythm Habit, Panel 01">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythm Habit, Panel 01</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RHSI01</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/43b9f033be54.jpg" alt="Rhythm Habit, Panel 02">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythm Habit, Panel 02</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RHSI02</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2024</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-card">
+                <div class="artwork-image">
+                    <img src="images/c8ac2240669f.jpg" alt="Rhythm Habit, No. 04 (red)">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-title">Rhythm Habit, No. 04 (red)</div>
+                    <div class="artwork-meta">
+                        <div class="inv-number">RESQ04</div>
+                        <div><strong>Series:</strong> Rhythm</div>
+                        <div><strong>Year:</strong> 2025</div>
+                        <div><strong>Edition:</strong> #1/3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
