@@ -247,6 +247,12 @@ def generate_html(rows, image_column, columns):
             font-size: 0.85rem;
             margin-bottom: 8px;
         }
+        
+        .price {
+            margin-top: 8px;
+            font-weight: 600;
+            color: #222;
+        }
     </style>
 </head>
 <body>
@@ -271,6 +277,12 @@ def generate_html(rows, image_column, columns):
         series = row.get('z350', '')  # Collection/Series
         year = row.get('4UG7', '')  # Date/Year
         edition = row.get('rXGj', '')  # Current sequence/edition
+        image_size = row.get('gWXH', '')  # Image size
+        paper_size = row.get('2Te2', '')  # Paper size
+        frame_size = row.get('6Ci3', '')  # Frame size
+        edition_desc = row.get('3y0u', '')  # Edition description
+        medium = row.get('Xe9e', '')  # Medium
+        price = row.get('upE4', '')  # Price
         
         # Build card HTML
         html += f"""            <div class="artwork-card">
@@ -290,6 +302,18 @@ def generate_html(rows, image_column, columns):
             html += f"""                        <div><strong>Year:</strong> {year}</div>\n"""
         if edition:
             html += f"""                        <div><strong>Edition:</strong> {edition}</div>\n"""
+        if image_size:
+            html += f"""                        <div><strong>Image:</strong> {image_size}"</div>\n"""
+        if paper_size:
+            html += f"""                        <div><strong>Paper:</strong> {paper_size}"</div>\n"""
+        if frame_size:
+            html += f"""                        <div><strong>Frame:</strong> {frame_size}"</div>\n"""
+        if edition_desc:
+            html += f"""                        <div style="margin-top: 10px; font-size: 0.85rem; line-height: 1.5;">{edition_desc}</div>\n"""
+        if medium:
+            html += f"""                        <div><strong>Medium:</strong> {medium}</div>\n"""
+        if price:
+            html += f"""                        <div class="price">${price}</div>\n"""
         
         html += """                    </div>
                 </div>
