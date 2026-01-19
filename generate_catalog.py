@@ -11,7 +11,7 @@ import json
 import hashlib
 import os
 from pathlib import Path
-from urllib.parse import urlparse, unquote
+from urllib.parse import urlparse, unquote, quote
 
 # Configuration
 API_TOKEN = "15d2c34c1ab2c226a629c1dcb9c9e02cffec1376"
@@ -253,6 +253,25 @@ def generate_html(rows, image_column, columns):
             font-weight: 600;
             color: #222;
         }
+        
+        .inquire-btn {
+            display: block;
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: #888;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .inquire-btn:hover {
+            background: #666;
+        }
     </style>
 </head>
 <body>
@@ -314,6 +333,39 @@ def generate_html(rows, image_column, columns):
             html += f"""                        <div><strong>Medium:</strong> {medium}</div>\n"""
         if price:
             html += f"""                        <div class="price">${price}</div>\n"""
+        
+        # Build email inquiry link
+        email_body = f"I'm interested in the following artwork:\\n\\n"
+        email_body += f"Title: {title}\\n"
+        if inventory:
+            email_body += f"Inventory: {inventory}\\n"
+        if series:
+            email_body += f"Series: {series}\\n"
+        if year:
+            email_body += f"Year: {year}\\n"
+        if edition:
+            email_body += f"Edition: {edition}\\n"
+        if image_size:
+            email_body += f'Image Size: {image_size}"\\n'
+        if paper_size:
+            email_body += f'Paper Size: {paper_size}"\\n'
+        if frame_size:
+            email_body += f'Frame Size: {frame_size}"\\n'
+        if edition_desc:
+            email_body += f"\\nDetails: {edition_desc}\\n"
+        if medium:
+            email_body += f"Medium: {medium}\\n"
+        if price:
+            email_body += f"Price: ${price}\\n"
+        
+        email_subject = f"Inquiry: {title}"
+        if inventory:
+            email_subject += f" ({inventory})"
+        
+        # URL encode for mailto link
+        mailto_link = f"mailto:jofowood@gmail.com?subject={quote(email_subject)}&body={quote(email_body)}"
+        
+        html += f"""                        <a href="{mailto_link}" class="inquire-btn">Inquire</a>\n"""
         
         html += """                    </div>
                 </div>
