@@ -425,7 +425,7 @@ def generate_html(rows, image_column, columns, header_logo, header_title, page_t
 
             html += f"""                        <a href="{purchase_link}" class="inquire-btn" target="_blank">Purchase Info</a>\n"""
 
-            html += """                    </div>
+        html += """                    </div>
                 </div>
             </div>
 """
