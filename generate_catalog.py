@@ -169,7 +169,7 @@ def find_image_column(columns):
     return None
 
 
-def generate_html(rows, image_column, columns, header_logo, header_title, page_title):
+def generate_html(rows, image_column, columns, header_logo, header_title, page_title, config):
     """Generate HTML catalog page matching existing style"""
     
     # Find specific columns by name
