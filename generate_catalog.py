@@ -30,6 +30,8 @@ def load_config(config_file):
         
         # Validate required fields
         required = ['view_name', 'output_file', 'header_logo', 'header_title', 'page_title']
+        # include_purchase_button is optional, defaults to False
+        config['include_purchase_button'] = config.get('include_purchase_button', False)
         missing = [field for field in required if field not in config]
         if missing:
             raise ValueError(f"Missing required config fields: {', '.join(missing)}")
