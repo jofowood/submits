@@ -21,13 +21,13 @@ pip install requests
 
 ## Usage
 
-### Generate a Catalog
+**Structure to Generate a Catalog:**
 
 ```bash
 python3 generate_catalog.py <config_file.json>
 ```
 
-**Examples:**
+### Examples:
 ```bash
 # Generate "Available Works" catalog
 python3 generate_catalog.py config_produced_works.json
@@ -46,7 +46,7 @@ git commit -m "Update catalogs"
 git push
 ```
 
-## Configuration Files
+## Configuration Files for Catalogs
 
 Each catalog needs a JSON config file with these fields:
 
@@ -56,7 +56,8 @@ Each catalog needs a JSON config file with these fields:
   "output_file": "path/to/output.html",
   "header_logo": "path/to/logo.png",
   "header_title": "path/to/title-image.png",
-  "page_title": "HTML page title"
+  "page_title": "HTML page title",
+  "config:edit this
 }
 ```
 
