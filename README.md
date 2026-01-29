@@ -27,7 +27,7 @@ pip install requests
 python3 generate_catalog.py <config_file.json>
 ```
 
-### Examples:
+### These are the Catalogs json to run:
 ```bash
 # Generate "Available Works" catalog
 python3 generate_catalog.py config_produced_works.json
@@ -57,24 +57,25 @@ Each catalog needs a JSON config file with these fields:
   "header_logo": "path/to/logo.png",
   "header_title": "path/to/title-image.png",
   "page_title": "HTML page title",
-  "config:edit this
+  "include_purchase_button": TRUE or FALSE
 }
 ```
 
-### Example: Available Works
+### Example: Available Works W/O Purchase Info button
 
 **config_available_works.json:**
 ```json
 {
-  "view_name": "Produced Works",
+  "view_name": "Available or in Process",
   "output_file": "art/catalog.html",
   "header_logo": "page-header-assets/logo.png",
   "header_title": "page-header-assets/available-works.png",
-  "page_title": "Available Works - John Woodruff"
+  "page_title": "Available Works - John Woodruff",
+  "include_purchase_button": false
 }
 ```
 
-### Example: Currently Showing
+### Example: Currently Showing with Purchase Info Button
 
 **config_currently_showing.json:**
 ```json
@@ -84,6 +85,7 @@ Each catalog needs a JSON config file with these fields:
   "header_logo": "page-header-assets/logo.png",
   "header_title": "page-header-assets/currently-showing-title.png",
   "page_title": "Currently Showing - John Woodruff"
+  "include_purchase_botton": true
 }
 ```
 
